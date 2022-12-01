@@ -21,10 +21,18 @@ app.post('/push',(req, res)=>{
   const message = body.message;
 
   let pushMessage = {
-    notification: {
+    // notification: {
+    //   title: from,
+    //   body: message,
+    // },
+    // notification 으로 보낼경우 포그라운드 상태에서는 받을 수 있으나
+    // 백그라운드 상태에서는 받을 수 없다.
+    // data 로 보낼 경우 포그라운드 백그라운드 모두 받을 수 있다.
+    data: {
       title: from,
-      body: message,
+      body: message
     },
+
     token: token,
   }
 
