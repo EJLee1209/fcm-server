@@ -63,6 +63,6 @@ app.get('/test', (req,res)=>{
   res.send("hello")
 })
 
-server.listen(8080, function(){
+server.listen(process.env.PORT || 8080, function(){
   console.log("server on 8080")
 })
